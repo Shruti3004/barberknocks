@@ -12,11 +12,14 @@ import {
 import { Button } from "react-native-elements";
 
 let ScreenHeight = Dimensions.get("window").height - 70;
-export default function Forgot({ navigation }) {
+export default function ForgotEmail({ navigation }) {
+  const handlePress = () => {
+    navigation.navigate("ForgotOtp");
+  };
   return (
     <ScrollView>
       <ImageBackground
-        source={require("../assets/bg_1.jpg")}
+        source={require("../../assets/bg_1.jpg")}
         style={{ ...styles.header }}
       >
         <View style={{ ...styles.Logincard }}>
@@ -31,6 +34,7 @@ export default function Forgot({ navigation }) {
             title="Send OTP"
             buttonStyle={styles.button}
             titleStyle={styles.buttonText}
+            onPress={handlePress}
           />
         </View>
       </ImageBackground>

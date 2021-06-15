@@ -3,7 +3,6 @@ import { StyleSheet, ScrollView } from "react-native";
 import * as Font from "expo-font";
 import AppLoading from "expo-app-loading";
 import DrawerNavigator from "./routes/drawerNavigator";
-import Header from "./components/Header";
 
 const getFonts = () =>
   Font.loadAsync({
