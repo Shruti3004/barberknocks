@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import {
   StyleSheet,
   View,
@@ -9,13 +9,10 @@ import {
   TextInput,
   TouchableOpacity,
 } from "react-native";
-import { Button, Card } from "react-native-elements";
+import { Button } from "react-native-elements";
 
 let ScreenHeight = Dimensions.get("window").height - 70;
-export default function Login({ navigation }) {
-  const handlePress = () => {
-    navigation.navigate("Forgot");
-  };
+export default function Forgot({ navigation }) {
   return (
     <ScrollView>
       <ImageBackground
@@ -23,27 +20,19 @@ export default function Login({ navigation }) {
         style={{ ...styles.header }}
       >
         <View style={{ ...styles.Logincard }}>
-          <Text style={{ ...styles.titleText }}>Sign in to your account</Text>
+          <Text style={{ ...styles.titleText }}>
+            Enter the E-mail associated with your account
+          </Text>
           <View style={{ ...styles.inputDiv }}>
             <Text style={{ ...styles.inputHeading }}>Email</Text>
             <TextInput style={styles.input} textContentType="emailAddress" />
-            <View style={{ ...styles.passwordDiv }}>
-              <Text style={{ ...styles.inputHeading }}>Password</Text>
-              <TouchableOpacity onPress={handlePress}>
-                <Text style={{ ...styles.inputHeading }}>Forgot Password?</Text>
-              </TouchableOpacity>
-            </View>
-            <TextInput style={styles.input} textContentType="password" />
           </View>
           <Button
-            title="Signin"
+            title="Send OTP"
             buttonStyle={styles.button}
             titleStyle={styles.buttonText}
           />
         </View>
-        <TouchableOpacity>
-          <Text style={styles.touchbutton}>Become a member ? Signup </Text>
-        </TouchableOpacity>
       </ImageBackground>
     </ScrollView>
   );
@@ -100,20 +89,8 @@ const styles = StyleSheet.create({
     borderColor: "#ced4da",
     borderStyle: "solid",
   },
-  passwordDiv: {
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "space-between",
-    paddingTop: 20,
-  },
   inputDiv: {
     paddingTop: 20,
     paddingBottom: 40,
-  },
-  touchbutton: {
-    paddingTop: 15,
-    color: "#ffffff",
-    fontSize: 18,
-    fontFamily: "font-demi",
   },
 });
